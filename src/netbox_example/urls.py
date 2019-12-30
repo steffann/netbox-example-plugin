@@ -2,7 +2,6 @@ from django.urls import path
 
 from . import views
 
-app_name = 'netbox_example'
 urlpatterns = [
     path('example/', views.ExampleListView.as_view(), name='example_list'),
     path('example/add/', views.ExampleCreateView.as_view(), name='example_add'),
