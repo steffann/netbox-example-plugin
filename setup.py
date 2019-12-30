@@ -84,8 +84,14 @@ setup(
         #   5 - Production/Stable
         'Development Status :: 1 - Planning',
 
+        # This is a web application using Django
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Framework :: Django :: 2.2',
+
         # Indicate who your project is intended for
         'Intended Audience :: System Administrators',
+
 
         # Pick your license as you wish
         'License :: OSI Approved :: Apache Software License',

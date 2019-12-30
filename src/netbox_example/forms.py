@@ -1,6 +1,6 @@
 from django import forms
 
-from utilities.forms import BootstrapMixin, StaticSelect2
+from utilities.forms import APISelect, BootstrapMixin
 from .models import DeviceExample, Example
 
 
@@ -37,5 +37,5 @@ class DeviceExampleForm(BootstrapMixin, forms.ModelForm):
             'device', 'name', 'value',
         ]
         widgets = {
-            'device': StaticSelect2(),
+            'device': APISelect(api_url='/api/dcim/devices/')
         }
