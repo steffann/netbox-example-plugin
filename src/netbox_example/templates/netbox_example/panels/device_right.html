@@ -1,0 +1,43 @@
+{% load helpers %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Device Example Right</strong>
+    </div>
+    {% if device.deviceexample_set.exists %}
+        <table class="table table-hover panel-body attr-table">
+            {% for example in device.deviceexample_set.all %}
+                <tr>
+                    <th>{{ example.name }}</th>
+                    <td class="rendered-markdown">{{ example.value|gfm }}</td>
+                    <td class="text-right noprint">
+                        {% if perms.netbox_example.change_deviceexample %}
+                            <a href="{% url 'netbox_example:device_example_edit' pk=example.pk %}?return_url={{ request.path }}"
+                               class="btn btn-xs btn-warning" title="Edit device example">
+                                <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        {% if perms.netbox_example.delete_deviceexample %}
+                            <a href="{% url 'netbox_example:device_example_delete' pk=example.pk %}?return_url={{ request.path }}"
+                               class="btn btn-danger btn-xs" title="Delete device example">
+                                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <div class="panel-body">
+            <span class="text-muted">None</span>
+        </div>
+    {% endif %}
+    {% if perms.netbox_example.add_deviceexample %}
+        <div class="panel-footer text-right noprint">
+            <a href="{% url 'netbox_example:device_example_add' %}?device={{ device.pk }}&return_url={{ request.path }} %}"
+               class="btn btn-xs btn-primary">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add device example
+            </a>
+        </div>
+    {% endif %}
+</div>

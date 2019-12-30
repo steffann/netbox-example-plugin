@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Device Example Home</strong>
+    </div>
+    <div class="list-group">
+        <div class="list-group-item">
+            {% if perms.netbox_example.view_example %}
+                <h4 class="list-group-item-heading"><a href="{% url 'netbox_example:example_list' %}">Examples</a></h4>
+            {% else %}
+                <span class="badge pull-right"><i class="fa fa-lock"></i></span>
+                <h4 class="list-group-item-heading">Examples</h4>
+            {% endif %}
+            <p class="list-group-item-text text-muted">An example of a stand-alone plugin thing</p>
+        </div>
+        <div class="list-group-item">
+            {% if perms.netbox_example.view_deviceexample %}
+                <h4 class="list-group-item-heading"><a href="{% url 'netbox_example:device_example_list' %}">Device
+                    Examples</a></h4>
+            {% else %}
+                <span class="badge pull-right"><i class="fa fa-lock"></i></span>
+                <h4 class="list-group-item-heading">Device Examples</h4>
+            {% endif %}
+            <p class="list-group-item-text text-muted">An example of something that is attached to a device</p>
+        </div>
+    </div>
+</div>

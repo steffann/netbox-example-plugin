@@ -1,0 +1,10 @@
+<li class="dropdown-header">Example plugin</li>
+<li{% if not perms.netbox_example.view_example %} class="disabled"{% endif %}>
+    {% if perms.netbox_example.add_example %}
+        <div class="buttons pull-right">
+            <a href="{% url 'netbox_example:example_add' %}" class="btn btn-xs btn-success" title="Add"><i
+                    class="fa fa-plus"></i></a>
+        </div>
+    {% endif %}
+    <a href="{% url 'netbox_example:example_list' %}">Examples</a>
+</li>
