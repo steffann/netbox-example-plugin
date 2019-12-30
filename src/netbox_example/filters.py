@@ -1,14 +1,12 @@
 import django_filters
 
-from extras.filters import CreatedUpdatedFilterSet
 from .models import DeviceExample, Example
 
 
-class ExampleFilter(CreatedUpdatedFilterSet):
+class ExampleFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(
         field_name='name',
         lookup_expr='icontains',
-        label='Example',
     )
 
     class Meta:
@@ -16,16 +14,14 @@ class ExampleFilter(CreatedUpdatedFilterSet):
         fields = ['id', 'name']
 
 
-class DeviceExampleFilter(CreatedUpdatedFilterSet):
+class DeviceExampleFilter(django_filters.FilterSet):
     device = django_filters.CharFilter(
         field_name='device__name',
         lookup_expr='icontains',
-        label='Device',
     )
     name = django_filters.CharFilter(
         field_name='name',
         lookup_expr='icontains',
-        label='Example',
     )
 
     class Meta:
