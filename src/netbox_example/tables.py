@@ -5,12 +5,12 @@ from .models import DeviceExample, Example
 
 EXAMPLE_ACTIONS = """
 {% if perms.netbox_example.change_example %}
-    <a href="{% url 'netbox_example:example_edit' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-xs btn-warning" title="Edit example">
+    <a href="{% url 'netbox-example:example_edit' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-xs btn-warning" title="Edit example">
         <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
     </a>
 {% endif %}
 {% if perms.netbox_example.delete_example %}
-    <a href="{% url 'netbox_example:example_delete' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-danger btn-xs" title="Delete example">
+    <a href="{% url 'netbox-example:example_delete' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-danger btn-xs" title="Delete example">
         <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
     </a>
 {% endif %}
@@ -18,12 +18,12 @@ EXAMPLE_ACTIONS = """
 
 DEVICE_EXAMPLE_ACTIONS = """
 {% if perms.netbox_example.change_deviceexample %}
-    <a href="{% url 'netbox_example:device_example_edit' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-xs btn-warning" title="Edit device example">
+    <a href="{% url 'netbox-example:device_example_edit' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-xs btn-warning" title="Edit device example">
         <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
     </a>
 {% endif %}
 {% if perms.netbox_example.delete_deviceexample %}
-    <a href="{% url 'netbox_example:device_example_delete' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-danger btn-xs" title="Delete device example">
+    <a href="{% url 'netbox-example:device_example_delete' pk=record.pk %}?return_url={{ request.path }}" class="btn btn-danger btn-xs" title="Delete device example">
         <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
     </a>
 {% endif %}

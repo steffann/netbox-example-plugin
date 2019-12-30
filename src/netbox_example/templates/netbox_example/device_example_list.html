@@ -4,13 +4,13 @@
 {% block content %}
     <div class="pull-right noprint">
         {% if perms.netbox_example.add_example %}
-            {% add_button 'netbox_example:device_example_add' %}
+            {% add_button 'netbox-example:device_example_add' %}
         {% endif %}
     </div>
     <h1>{% block title %}Device Examples{% endblock %}</h1>
     <div class="row">
         <div class="col-md-9">
-            {% include 'utilities/obj_table.html' with bulk_delete_url='netbox_example:device_example_bulk_delete' %}
+            {% include 'utilities/obj_table.html' with bulk_delete_url='netbox-example:device_example_bulk_delete' %}
         </div>
         <div class="col-md-3 noprint">
             {% include 'inc/search_panel.html' %}

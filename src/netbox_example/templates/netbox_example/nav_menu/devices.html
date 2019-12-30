@@ -2,9 +2,9 @@
 <li{% if not perms.netbox_example.view_deviceexample %} class="disabled"{% endif %}>
     {% if perms.netbox_example.add_deviceexample %}
         <div class="buttons pull-right">
-            <a href="{% url 'netbox_example:device_example_add' %}" class="btn btn-xs btn-success" title="Add"><i
+            <a href="{% url 'netbox-example:device_example_add' %}" class="btn btn-xs btn-success" title="Add"><i
                     class="fa fa-plus"></i></a>
         </div>
     {% endif %}
-    <a href="{% url 'netbox_example:device_example_list' %}">Device Examples</a>
+    <a href="{% url 'netbox-example:device_example_list' %}">Device Examples</a>
 </li>
