@@ -53,15 +53,15 @@ class DeviceExampleListView(PermissionRequiredMixin, ObjectListView):
     filter = filters.DeviceExampleFilter
     filter_form = forms.DeviceExampleFilterForm
     table = tables.DeviceExampleTable
-    template_name = 'netbox_example/device_example_list.html'
+    template_name = 'netbox_example/deviceexample_list.html'
 
 
 class DeviceExampleCreateView(PermissionRequiredMixin, ObjectEditView):
     permission_required = 'netbox_example.add_deviceexample'
     model = DeviceExample
     model_form = forms.DeviceExampleForm
-    template_name = 'netbox_example/device_example_edit.html'
-    default_return_url = 'netbox_example:device_example_list'
+    template_name = 'netbox_example/deviceexample_edit.html'
+    default_return_url = 'netbox_example:deviceexample_list'
 
 
 class DeviceExampleEditView(DeviceExampleCreateView):
@@ -78,4 +78,4 @@ class DeviceExampleBulkDeleteView(PermissionRequiredMixin, BulkDeleteView):
     queryset = Example.objects.prefetch_related('device')
     filter = filters.DeviceExampleFilter
     table = tables.DeviceExampleTable
-    default_return_url = 'netbox_example:device_example_list'
+    default_return_url = 'netbox_example:deviceexample_list'

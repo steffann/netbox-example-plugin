@@ -14,7 +14,7 @@
         </div>
         <div class="list-group-item">
             {% if perms.netbox_example.view_deviceexample %}
-                <h4 class="list-group-item-heading"><a href="{% url 'netbox-example:device_example_list' %}">Device
+                <h4 class="list-group-item-heading"><a href="{% url 'netbox-example:deviceexample_list' %}">Device
                     Examples</a></h4>
             {% else %}
                 <span class="badge pull-right"><i class="fa fa-lock"></i></span>

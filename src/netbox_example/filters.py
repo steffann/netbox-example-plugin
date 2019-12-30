@@ -7,6 +7,7 @@ class ExampleFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(
         field_name='name',
         lookup_expr='icontains',
+        label='Name',
     )
 
     class Meta:
@@ -18,10 +19,12 @@ class DeviceExampleFilter(django_filters.FilterSet):
     device = django_filters.CharFilter(
         field_name='device__name',
         lookup_expr='icontains',
+        label='Device name',
     )
     name = django_filters.CharFilter(
         field_name='name',
         lookup_expr='icontains',
+        label='Name',
     )
 
     class Meta:
