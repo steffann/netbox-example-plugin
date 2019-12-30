@@ -1,7 +1,7 @@
 import django_filters
 
 from extras.filters import CreatedUpdatedFilterSet
-from .models import Example
+from .models import DeviceExample, Example
 
 
 class ExampleFilter(CreatedUpdatedFilterSet):
@@ -29,5 +29,5 @@ class DeviceExampleFilter(CreatedUpdatedFilterSet):
     )
 
     class Meta:
-        model = Example
+        model = DeviceExample
         fields = ['id', 'device', 'name']
